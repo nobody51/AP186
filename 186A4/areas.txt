@@ -1,0 +1,19 @@
+get the numerical area and analytical area of
+
+bw border circle 50 px		852.75	961.625			
+
+edge prewitt circle 50px	922.25  961.625
+
+edge prewitt circle 100px	3749.25	3846.5
+
+edge prewitt circle 200px	15235.75 15386
+
+edge prewitt square 50px	1150.25	1225
+
+edge prewitt square 200px	19567.75 19600
+
+edge prewitt cross 50px		125.375	}
+
+bw border cross 50px		91.85 	}	asymetrical
+
+edge prewitt ellipse 50px	911.25	}
