@@ -1,0 +1,12 @@
+nx = 500;
+ny = 500;
+x = linspace(-1,1,nx);
+y = linspace(-1,1,ny);
+[X,Y] = ndgrid(x,y);
+D = exp(-(X.^2 + Y.^2));
+r = sqrt(X.^2 + Y.^2);
+D (find(r>0.7) ) = 0;
+f = scf();
+grayplot(x,y,A);
+f.color_map = graycolormap(32);
+xs2png(gcf(),'apperature.png');
