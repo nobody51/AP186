@@ -13,9 +13,9 @@ D = exp(-(X.^2 + Y.^2));
 r = sqrt(X.^2 + Y.^2);
 D (find(r>0.7) ) = 0;
 
-E = C.*D
+E = D - C
 
 f = scf();
 grayplot(x,y,E);
 f.color_map = graycolormap(32);
-xs2png(gcf(),'crossXapperature.png');
+xs2png(gcf(),'apperature-cross.png');
