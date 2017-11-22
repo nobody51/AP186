@@ -1,15 +1,19 @@
-nx = 100;
-ny = 100;
+nx = 200;
+ny = 200;
 x = linspace(-1,1,nx);
 y = linspace(-1,1,ny);
 [X,Y] = ndgrid(x,y);
 r = sqrt((X.^2) + (Y.^2));
 A = zeros(nx,ny);
 A (find(r<0.7) ) = 1;   //generates a circle with radius <-
+f = scf();
+imshow(uint8(A*255));isoview();
 
 // takes the edge of the picture
-E = bool2s(edge(A,'prewitt'));
+E = bool2s(edge(A,'sobel'));
 imageE = uint8(E)*255;
+f = scf();
+imshow(uint8(imageE));isoview();
 
 // finds the center and converts the image coors to cartesian coors
 [yEdge,xEdge] = find(E);
