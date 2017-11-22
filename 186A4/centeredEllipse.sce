@@ -6,10 +6,16 @@ y = linspace(-1,1,ny);
 r = sqrt(2*(X.^2) + (Y.^2)/2);
 A = zeros(nx,ny);
 A (find(r<0.7) ) = 1;
+f = scf();
+imshow(uint8(A*255));isoview();
+xs2png(gcf(),'ellipse.png');
 
 // takes the edge of the picture
 E = bool2s(edge(A,'prewitt'));
 imageE = uint8(E)*255;
+f = scf();
+imshow(imageE);isoview();
+xs2png(gcf(),'ellipsePrewitt.png');
 
 // finds the center and converts the image coors to cartesian coors
 [yEdge,xEdge] = find(E);
@@ -33,10 +39,13 @@ Area = 0.5 * (xDy-yDx)
 
 //Area = xDy - yDx;
 disp(Area);
+disp(sum(A));
+percent = (abs(sum(A)-Area)/sum(A))*100
+disp(100 - percent)
 //disp(length(ySorted));
 
 
 f = scf();
 plot(xSorted,ySorted,'r-');
 isoview();
-xs2png(gcf(),'test.png');
+

@@ -1,5 +1,5 @@
-nx = 200;
-ny = 200;
+nx = 100;
+ny = 100;
 x = linspace(-1,1,nx);
 y = linspace(-1,1,ny);
 [X,Y] = ndgrid(x,y);
@@ -33,6 +33,9 @@ Area = 0.5 * (xDy-yDx)
 
 //Area = xDy - yDx;
 disp(Area);
+disp(sum(A));
+percent = (abs(sum(A)-Area)/sum(A))*100
+disp(100 - percent)
 //disp(length(ySorted));
 
 
@@ -42,4 +45,4 @@ isoview();
 
 //imshow(image_E);
 //grayplot(x,y,E);
-xs2png(gcf(),'prewittcircle200.png');
+

@@ -1,5 +1,5 @@
-nx = 50;
-ny = 50;
+nx = 200;
+ny = 200;
 x = linspace(-1,1,nx);
 y = linspace(-1,1,ny);
 [X,Y] = ndgrid(x,y);
@@ -8,10 +8,14 @@ B = zeros (nx,ny);
 A (find(abs(X)<0.25 &abs(X)>0.1 & Y>0 & Y<0.25) ) = 1; //transcept
 B (find(abs(X)<0.1 & abs(Y)<0.4) ) = 1; //nave
 C = A + B;
+f = scf();
+imshow(uint8(C*255));isoview();
 
 // takes the edge of the picture
 E = bool2s(edge(C,'prewitt'));
 imageE = uint8(E)*255;
+f = scf();
+imshow(uint8(imageE));isoview();
 
 // finds the center and converts the image coors to cartesian coors
 [yEdge,xEdge] = find(E);
@@ -35,6 +39,9 @@ Area = 0.5 * (xDy-yDx)
 
 //Area = xDy - yDx;
 disp(Area);
+disp(sum(C));
+percent = (abs(sum(C)-Area)/sum(C))*100
+disp(100 - percent)
 //disp(length(ySorted));
 
 f = scf();
