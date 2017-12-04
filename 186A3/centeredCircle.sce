@@ -10,6 +10,12 @@ A (find(r<0.7) ) = 1;
 f = scf();
 grayplot(x,y,A);
 f.color_map = graycolormap(32);
+A = double(A);
+fftA = fft2(A);
+fftA = uint8(imnorm(fftshift(abs(fftA)))*255);
+f=scf();
+imshow(fftA);
 
-E = edge(A,'sobel');
-imshow(E);
+
+//E = edge(A,'sobel');
+//imshow(E);

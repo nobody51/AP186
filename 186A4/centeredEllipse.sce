@@ -1,5 +1,5 @@
-nx = 50;
-ny = 50;
+nx = 200;
+ny = 200;
 x = linspace(-1,1,nx);
 y = linspace(-1,1,ny);
 [X,Y] = ndgrid(x,y);
@@ -11,7 +11,7 @@ imshow(uint8(A*255));isoview();
 xs2png(gcf(),'ellipse.png');
 
 // takes the edge of the picture
-E = bool2s(edge(A,'prewitt'));
+E = bool2s(edge(A,'sobel'));
 imageE = uint8(E)*255;
 f = scf();
 imshow(imageE);isoview();

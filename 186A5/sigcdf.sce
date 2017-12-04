@@ -1,5 +1,5 @@
 // take an image and convert it to gray
-im = imread('C:\Users\up csrc\Documents\186A5\test2.jpg');
+im = imread('C:\Users\ADMIN\Documents\PHYSICS\6thYear\186\AP186\186A5\test2.jpg');
 grayIm = rgb2gray(im)
 scf(0);
 isoview();
@@ -22,7 +22,7 @@ xs2png(gcf(),'grayImageCDF');
 //produce ideal cdf
 k = 0.05
 x = 0:255;
-y = (1/(1+exp(-k*(x-127.5))));
+y = exp(x)/(exp(x)+1);
 scf(3);
 plot(x,y);
 xs2png(gcf(),'idealSigCDF');

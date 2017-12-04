@@ -1,5 +1,5 @@
 //same steps as start.sce but with the 'A' image
-A = imread("C:\Users\up csrc\Documents\186A6\A.png");
+A = imread("C:\Users\ADMIN\Desktop\PHYSICS\6th year\186\AP186\186A6\A.png");
 A = rgb2gray(A);
 
 //1
@@ -41,5 +41,6 @@ isoview();
 f=scf();
 Matplot(imag(AFT)*255);
 isoview();
+
 
 
