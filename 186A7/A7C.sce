@@ -28,7 +28,7 @@ FT_squares = abs(fftshift(fft2(double(squares))));
 f=scf();imshow(squares);isoview();
 f=scf();imshow(FT_squares);isoview();
 
-//4
+//4/5
 a = 1
 b = 0.5
 c = 0.1
@@ -36,7 +36,10 @@ rx = a*exp(-(X).^2/(2*c^2));
 ry1 = a*exp(-(Y-b).^2/(2*c^2));
 ry2 = a*exp(-(Y+b).^2/(2*c^2));
 gauss = rx.*ry1 + rx.*ry2
-FT_gauss =abs(fftshift(fft2(double(gauss))))
+FT_gauss =imnorm(abs(fftshift(fft2(double(gauss)))))
 
 f=scf();imshow(gauss);isoview();
-f=scf();imshow(FT_gauss);isoview();
+f=scf();imshow(uint8(FT_gauss*255));isoview();
+
+//6
+
