@@ -18,4 +18,4 @@ B = A.*D
 f = scf();
 grayplot(x,y,B);
 f.color_map = graycolormap(32);
-xs2png(gcf(),'annulusXapperature.png');
+//xs2png(gcf(),'annulusXapperature.png');
