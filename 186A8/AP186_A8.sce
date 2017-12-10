@@ -3,11 +3,10 @@
 chec = imread("C:\Users\Anton Cruz\Desktop\186\AP186\186A8\check.jpg");
 chec = rgb2gray(chec);
 [count, cells] = imhist(chec, 256);
-plot(cells, count);
-
+plot (cells, count);
+isoview();
 xs2png(gcf(), "A8PartA1.png")
 
-//filename = "A8PartA2thresh " + string(i) + ".png"
 BW = chec < 140;
 imshow(BW); isoview();
 imwrite(BW, "A8PartA2threshideal.png")

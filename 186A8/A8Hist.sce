@@ -1,18 +1,4 @@
-I = imread("C:\Users\Anton Cruz\Desktop\186\AP186\186A8\check.jpg");
-I = rgb2gray(I);
-
-[count, cells] = imhist(I, 256);
-plot (cells,count);
-xs2png(gcf(), "histogram.png");
-
-f=scf();
-BW = I<170;
-imshow(BW);
-isoview();
-xs2png(gcf(), "bwcheck");
-
-//2D Histogram
-J = imread("C:\Users\Anton Cruz\Desktop\186\AP186\186A8\macbeth.jpg");
+J = imread("C:\Users\Anton Cruz\Desktop\186\AP186\186A8\New folder\color.png");
 go_on = 'y';
 while go_on ~= 'n' do
     subplot(1,2,1)
