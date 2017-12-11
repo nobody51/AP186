@@ -1,10 +1,12 @@
-A = imread('C:\Users\up csrc\Documents\186A4\icelandbw.png');
+A = imread('C:\Users\ADMIN\Documents\PHYSICS\6thYear\186\AP186\186A4\icelandaratio.png');
+A = rgb2gray(A);
 //figure(0);
 //imshow(A);
 
 // takes the edge of the picture
 E = bool2s(edge(A,'prewitt'));
 imageE = uint8(E)*255;
+imwrite(imageE,'icelandborder.png');
 
 // finds the center and converts the image coors to cartesian coors
 [yEdge,xEdge] = find(E);
@@ -31,4 +33,4 @@ disp(Area);
 f = scf();
 plot(xSorted,ySorted,'r-');
 isoview();
-xs2png(gcf(),'test.png');
+xs2png(gcf(),'icelandArea.png');
